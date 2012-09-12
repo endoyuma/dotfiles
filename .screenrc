@@ -1,0 +1,9 @@
+hell to invoke with ^T-c
+shell /bin/zsh
+
+#modifire key
+#escape ^Tt
+
+#zonbie
+zombie ^[
+
