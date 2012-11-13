@@ -20,6 +20,7 @@ export PATH=/usr/local/bin:$PATH
 umask 022
 
 # Set up aliases
+alias javac="javac -J-Dfile.encoding=UTF8"
 alias mv='nocorrect mv'       # no spelling correction on mv
 alias cp='nocorrect cp'       # no spelling correction on cp
 alias mkdir='nocorrect mkdir' # no spelling correction on mkdir
