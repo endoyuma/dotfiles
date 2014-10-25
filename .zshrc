@@ -38,7 +38,7 @@ alias la='ls -a'
 alias lsd='ls -ld *(-/DN)'
 
 #set chartype
-export LANG=ja_JP.UTF8
+export LANG=en_US.UTF8
 
 # List only file beginning with "."
 alias lsa='ls -ld .*'
