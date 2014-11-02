@@ -1,11 +1,7 @@
-ln dotfiles/.vim .vim
+ln -sf ~/dotfiles/.vimrc ~/.vimrc
 
-ln dotfiles/.vimrc .vim
+ln -sf ~/dotfiles/.zshrc ~/.zshrc
 
-ln dotfiles/.zshrc .vim
+ln -sf ~/dotfiles/.screenrc ~/.screenrc
 
-ln dotfiles/.screenrc .vim
-
-ln dotfiles/.gitconfig .gitconfig
-
-ln dotfiles/.vim .vim
+ln -sf ~/dotfiles/colors ~/.vim/colors
