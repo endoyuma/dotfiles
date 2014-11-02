@@ -1,11 +1,7 @@
-*Notice
+ln -sf ~/dotfiles/.vimrc ~/.vimrc
 
-Def charset is "EUC-JP".
-mind if you use UTF-8.
+ln -sf ~/dotfiles/.zshrc ~/.zshrc
 
-ln dotfiles/.vim .vim
-ln dotfiles/.vimrc .vim
-ln dotfiles/.zshrc .vim
-ln dotfiles/.screenrc .vim
-ln dotfiles/.gitconfig .gitconfig
-ln dotfiles/.vim .vim
+ln -sf ~/dotfiles/.screenrc ~/.screenrc
+
+ln -sf ~/dotfiles/colors ~/.vim/colors
