@@ -11,8 +11,8 @@ filetype indent on
 
 set undolevels=100
 set t_Co=256
-set tabstop=4
-				
+set number
+
 colorscheme molokai
 syntax on
 let g:molokai_original = 1
