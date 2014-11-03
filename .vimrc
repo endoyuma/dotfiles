@@ -1,4 +1,4 @@
-syntax on
+syntax enable
 filetype off
 
 if has('vim_starting')
@@ -12,6 +12,12 @@ filetype indent on
 set undolevels=100
 set t_Co=256
 set number
+set ruler
+set whichwrap=h,l
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+
 
 colorscheme molokai
 syntax on
