@@ -1,3 +1,6 @@
+#for boot2docker
+export DOCKER_HOST=tcp://192.168.59.103:2375
+
 #
 # .zshrc is sourced in interactive shells.  It
 # should contain commands to set up aliases, functions,
@@ -72,8 +75,11 @@ export MANPATH
 hosts=(`hostname` ftp.math.gatech.edu prep.ai.mit.edu wuarchive.wustl.edu)
 
 # Set prompts
-PROMPT='%m%# '    # default prompt
-RPROMPT=' %~'     # prompt for right side of screen
+autoload -Uz colors
+colors
+
+PROMPT="%(?.%{${fg[green]}%}.%{${fg[red]}%})[%~]%{${reset_color}%} "
+RPROMPT=' %n@%m'     # prompt for right side of screen
 
 # Some environment variables
 export MAIL=/var/spool/mail/$USERNAME
@@ -161,26 +167,5 @@ zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.o' '*?.c~' \
 
 # ignore completion functions (until the _ignored completer)
 zstyle ':completion:*:functions' ignored-patterns '_*'
-
-
-
-autoload colors
-colors
-case ${UID} in
-		0)
-				PROMPT="%/#%{${reset_color}%}%b "
-				PROMPT2="%B%{${fg[red]}%}%_#%{${reset_color}%}%b "
-				SPROMPT="%B%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%}%b "
-				[ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-				PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
-				;;
-		*)
-				PROMPT="%{${fg[red]}*${reset_color}%}"
-				PROMPT2="%{${fg[red]}%*%_%%%{${reset_color}%} "
-				SPROMPT="%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
-				[ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-				PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
-				;;
-esac
 
 
