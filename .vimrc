@@ -1,13 +1,19 @@
 syntax enable
+set nocompatible
 filetype off
 
 if has('vim_starting')
   set nocompatible
-  set runtimepath+=~/dotfiles/bundle/neobundle.vim/
+  set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim/
 end
 
-filetype plugin on
-filetype indent on
+call neobundle#begin(expand('~/dotfiles/.vim/bundle/'))
+
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'altercation/vim-colors-solarized'
+
+call neobundle#end()
+filetype plugin indent on
 
 set undolevels=100
 set t_Co=256
@@ -18,8 +24,8 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
-colorscheme solalized
+colorscheme jellybeans 
+
 syntax on
-let g:molokai_original = 1
 let g:rehash256 = 1
 set background=dark
