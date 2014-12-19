@@ -36,6 +36,7 @@ alias grep=egrep
 alias ll='ls -l'
 alias la='ls -a'
 
+
 # List only directories and symbolic
 # links that point to directories
 alias lsd='ls -ld *(-/DN)'
@@ -97,10 +98,11 @@ LOGCHECK=300                    # check every 5 min for login/logout activity
 WATCHFMT='%n %a %l from %m at %t.'
 
 # Set/unset  shell options
-setopt   notify globdots correct pushdtohome cdablevars autolist
-setopt   correctall autocd recexact longlistjobs
+setopt   notify globdots pushdtohome cdablevars autolist
+setopt   autocd recexact longlistjobs
 setopt   autoresume histignoredups pushdsilent noclobber
 setopt   autopushd pushdminus extendedglob rcquotes mailwarning
+#setopt correct correctall
 unsetopt bgnice autoparamslash
 
 # Autoload zsh modules when they are referenced
