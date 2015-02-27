@@ -10,6 +10,7 @@ call neobundle#begin(expand('~/dotfiles/.vim/bundle/'))
 
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'tomasr/molokai'
 
 NeoBundleCheck
 call neobundle#end()
@@ -25,8 +26,9 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
-colorscheme jellybeans
+syntax enable
+colorscheme molokai
 
 syntax on
 let g:rehash256 = 1
-set background=dark
+
