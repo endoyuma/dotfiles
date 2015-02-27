@@ -1,13 +1,8 @@
-#for boot2docker
-export DOCKER_HOST=tcp://192.168.59.103:2375
-
-#
-# .zshrc is sourced in interactive shells.  It
-# should contain commands to set up aliases, functions,
-# options, key bindings, etc.
-#
-
-# THIS FILE IS NOT INTENDED TO BE USED AS /etc/zshrc, NOR WITHOUT EDITING
+export EDITOR=vim        # エディタをvimに設定
+export LANG=en_US.UTF8
+export KCODE=u           # KCODEにUTF-8を設定
+export AUTOFEATURE=true  # autotestでfeatureを動かす
+export PATH=/usr/local/bin:$PATH
 
 # Search path for the cd command
 cdpath=(.. ~ ~/src ~/zsh)
@@ -17,8 +12,6 @@ unlimit
 limit stack 8192
 limit core 0
 limit -s
-
-export PATH=/usr/local/bin:$PATH
 
 umask 022
 
@@ -36,13 +29,9 @@ alias grep=egrep
 alias ll='ls -l'
 alias la='ls -a'
 
-
 # List only directories and symbolic
 # links that point to directories
 alias lsd='ls -ld *(-/DN)'
-
-#set chartype
-export LANG=en_US.UTF8
 
 # List only file beginning with "."
 alias lsa='ls -ld .*'
@@ -82,6 +71,16 @@ colors
 PROMPT="%(?.%{${fg[green]}%}.%{${fg[red]}%})[%~]%{${reset_color}%} "
 RPROMPT=' %n@%m'     # prompt for right side of screen
 
+# color ls
+autoload -U compinit
+compinit
+
+export LSCOLORS=gxfxcxdxbxegedabagacag
+export LS_COLORS='di=36;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;46'
+
+alias ls="ls --color"
+zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
+
 # Some environment variables
 export MAIL=/var/spool/mail/$USERNAME
 export LESS=-cex3M
@@ -102,6 +101,34 @@ setopt   notify globdots pushdtohome cdablevars autolist
 setopt   autocd recexact longlistjobs
 setopt   autoresume histignoredups pushdsilent noclobber
 setopt   autopushd pushdminus extendedglob rcquotes mailwarning
+autoload -U compinit; compinit # 補完機能を有効にする
+setopt auto_list               # 補完候補を一覧で表示する(d)
+setopt auto_menu               # 補完キー連打で補完候補を順に表示する(d)
+setopt list_packed             # 補完候補をできるだけ詰めて表示する
+setopt list_types              # 補完候補にファイルの種類も表示する
+bindkey "^[[Z" reverse-menu-complete  # Shift-Tabで補完候補を逆順する("\e[Z"でも動作する)
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 補完時に大文字小文字を区別しない
+
+### History ###
+HISTFILE=~/.zsh_history   # ヒストリを保存するファイル
+HISTSIZE=10000            # メモリに保存されるヒストリの件数
+SAVEHIST=10000            # 保存されるヒストリの件数
+setopt bang_hist          # !を使ったヒストリ展開を行う(d)
+setopt extended_history   # ヒストリに実行時間も保存する
+setopt hist_ignore_dups   # 直前と同じコマンドはヒストリに追加しない
+setopt share_history      # 他のシェルのヒストリをリアルタイムで共有する
+setopt hist_reduce_blanks # 余分なスペースを削除してヒストリに保存する
+
+# マッチしたコマンドのヒストリを表示できるようにする
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
+
+# すべてのヒストリを表示する
+function history-all { history -E 1 }
+
 #setopt correct correctall
 unsetopt bgnice autoparamslash
 
@@ -130,6 +157,21 @@ bindkey '^I' complete-word # complete on tab, leave expansion to _expand
 # distribution.
 autoload -U compinit
 compinit
+
+
+### Ls Color ###
+# 色の設定
+export LSCOLORS=Exfxcxdxbxegedabagacad
+# 補完時の色の設定
+export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+# ZLS_COLORSとは？
+export ZLS_COLORS=$LS_COLORS
+# lsコマンド時、自動で色がつく(ls -Gのようなもの？)
+export CLICOLOR=true
+# 補完候補に色を付ける
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+
 
 # Completion Styles
 
