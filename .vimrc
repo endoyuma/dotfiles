@@ -6,7 +6,7 @@ if has('vim_starting')
   set runtimepath+=~/.dotfiles/.vim/neobundle.vim/
 end
 
-call neobundle#begin(expand('~/dotfiles/.vim/bundle/'))
+call neobundle#begin(expand('~/.dotfiles/.vim/bundle/'))
 
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'altercation/vim-colors-solarized'
