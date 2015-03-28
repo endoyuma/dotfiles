@@ -3,7 +3,7 @@ filetype off
 
 if has('vim_starting')
   set nocompatible
-  set runtimepath+=~/dotfiles/.vim/neobundle.vim/
+  set runtimepath+=~/.dotfiles/.vim/neobundle.vim/
 end
 
 call neobundle#begin(expand('~/dotfiles/.vim/bundle/'))

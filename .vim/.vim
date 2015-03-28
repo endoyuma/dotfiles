@@ -1,1 +1,1 @@
-/home/vagrant/dotfiles/.vim
+/home/ubuntu/.dotfiles/.vim
