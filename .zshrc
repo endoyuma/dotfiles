@@ -100,7 +100,7 @@ WATCHFMT='%n %a %l from %m at %t.'
 setopt   notify globdots pushdtohome cdablevars autolist
 setopt   autocd recexact longlistjobs
 setopt   autoresume histignoredups pushdsilent noclobber
-setopt   autopushd pushdminus extendedglob rcquotes mailwarning
+setopt   autopushd pushdminus extendedglob rcquotes mailwarning nonomatch
 autoload -U compinit; compinit # 補完機能を有効にする
 setopt auto_list               # 補完候補を一覧で表示する(d)
 setopt auto_menu               # 補完キー連打で補完候補を順に表示する(d)
