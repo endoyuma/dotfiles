@@ -23,6 +23,8 @@ set number
 set ruler
 set whichwrap=h,l
 set tabstop=2
+set autoindent
+set expandtab
 set softtabstop=2
 set shiftwidth=2
 
