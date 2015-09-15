@@ -1,10 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/home/ec2-user/.vim'
-let g:netrw_dirhist_2='/home/ubuntu/progreth/app/models'
-let g:netrw_dirhist_3='/home/ubuntu/progreth/db/migrate'
-let g:netrw_dirhist_4='/home/ubuntu/elastic/test'
-let g:netrw_dirhist_5='/home/ubuntu/elastic/app/controllers/concerns'
-let g:netrw_dirhist_6='/home/ubuntu/elastic/lib/tasks'
-let g:netrw_dirhist_7='/home/ubuntu/progreth/app/assets/javascripts/lib'
-let g:netrw_dirhist_8='/home/ubuntu/elastic/app/controllers/concerns'
+let g:netrw_dirhist_cnt =0

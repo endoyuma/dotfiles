@@ -11,6 +11,7 @@ call neobundle#begin(expand('~/.dotfiles/.vim/bundle/'))
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'tomasr/molokai'
+NeoBundle 'slim-template/vim-slim'
 
 NeoBundleCheck
 call neobundle#end()
