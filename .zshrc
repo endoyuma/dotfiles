@@ -1,5 +1,5 @@
 export EDITOR=vim        # エディタをvimに設定
-export LANG=en_US.UTF8
+export LANG="ja_JP.UTF-8"
 export KCODE=u           # KCODEにUTF-8を設定
 export AUTOFEATURE=true  # autotestでfeatureを動かす
 export PATH=/usr/local/bin:$PATH

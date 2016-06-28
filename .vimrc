@@ -1,4 +1,9 @@
 set nocompatible
+set encoding=utf-8
+
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
+
 filetype off
 
 if has('vim_starting')
@@ -153,10 +158,6 @@ function! s:GetHighlight(hi)
   return hl
 endfunction
 
-
-imap { {}<LEFT>
-imap [ []<LEFT>
-imap ( ()<LEFT>
 
 
 
